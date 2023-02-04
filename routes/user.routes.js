@@ -5,13 +5,15 @@ import {
   usersPatch,
   usersPost,
   usersPut,
+  usersPutEmpty,
 } from "../controllers/user.controllers.js";
 
 const userRouter = Router();
 
 userRouter.get("/", usersGet);
 
-userRouter.put("/", usersPut);
+userRouter.put("/:id", usersPut);
+userRouter.put("/", usersPutEmpty);
 
 userRouter.post("/", usersPost);
 
